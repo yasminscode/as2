@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Questões AS • Gestação & Puericultura</title>
+  <meta name="description" content="Banco de questões interativo de múltipla escolha para revisar os blocos de gestação, puericultura, neonatologia e adolescência." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="questions-page">
+  <div class="bg-orbs orb-1"></div>
+  <div class="bg-orbs orb-2"></div>
+  <div class="bg-orbs orb-3"></div>
+
+  <header class="hero hero-small">
+    <div class="hero-text">
+      <span class="eyebrow">📝 banco fofo de questões</span>
+      <h1>Questões de AS<br><span>uma por vez, com feedback</span></h1>
+      <p>
+        Agora o treino ficou mais gostosinho: aparece <strong>uma questão por vez</strong>, você clica na alternativa,
+        recebe o feedback na hora e só depois segue para a próxima.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="index.html">Voltar ao checklist</a>
+        <button id="resetQuiz" class="btn secondary" type="button">Recomeçar bloco</button>
+      </div>
+      <div class="stats">
+        <div class="stat-card">
+          <span class="stat-label">blocos com questões</span>
+          <strong id="topicCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">questão atual</span>
+          <strong id="questionProgress">1/10</strong>
+        </div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/hero-mother-baby.svg" alt="Ilustração delicada de maternidade" />
+      <div class="floating-card card-a">📚 5 ABCDE + 5 A-R</div>
+      <div class="floating-card card-b">💡 feedback imediato</div>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h2>Escolhe o bloco</h2>
+        <nav id="questionToc" class="topic-selector"></nav>
+      </div>
+      <div class="sidebar-box soft">
+        <h2>Como funciona</h2>
+        <p>
+          Responde, vê o comentário, clica em <strong>próxima questão</strong> e vai seguindo. Quando terminar o bloco,
+          aparece um resuminho com teu desempenho.
+        </p>
+      </div>
+    </aside>
+
+    <section class="content">
+      <section class="intro-cards">
+        <article class="mini-card">
+          <span>✨</span>
+          <h3>Estudo ativo</h3>
+          <p>Você pensa antes de ver a resposta.</p>
+        </article>
+        <article class="mini-card">
+          <span>🧠</span>
+          <h3>Feedback na hora</h3>
+          <p>Acertou ou errou, já entende o porquê.</p>
+        </article>
+        <article class="mini-card">
+          <span>🌷</span>
+          <h3>Sem poluição</h3>
+          <p>Uma questão por vez, bem mais leve visualmente.</p>
+        </article>
+      </section>
+
+      <section class="quiz-player-card">
+        <div class="quiz-topic-head">
+          <div>
+            <p class="quiz-kicker" id="topicIconLine">🤰 bloco selecionado</p>
+            <h2 id="topicTitle">Carregando bloco...</h2>
+            <p id="topicSubtitle">10 questões • 5 ABCDE + 5 asserção-razão</p>
+          </div>
+          <div class="quiz-mini-stats">
+            <span id="scoreBadge">0 acertos</span>
+            <span id="typeBadge">ABCDE</span>
+          </div>
+        </div>
+
+        <div class="quiz-progress-wrap">
+          <div class="quiz-progress-bar"><span id="quizProgressFill"></span></div>
+          <p id="quizProgressText">Questão 1 de 10</p>
+        </div>
+
+        <article class="single-question-card" id="questionCard">
+          <div class="question-number big" id="questionNumber">1</div>
+          <div class="single-question-body">
+            <span class="question-tag" id="questionTag">ABCDE</span>
+            <h3 class="question-prompt" id="questionPrompt"></h3>
+            <div id="questionExtra"></div>
+            <div id="optionsContainer" class="answer-buttons"></div>
+          </div>
+        </article>
+
+        <div class="feedback-panel hidden" id="feedbackPanel">
+          <div class="feedback-badge" id="feedbackBadge">✔️</div>
+          <div>
+            <h4 id="feedbackTitle">Resposta correta!</h4>
+            <p id="feedbackAnswer"></p>
+            <p id="feedbackRationale"></p>
+          </div>
+        </div>
+
+        <div class="quiz-actions-row">
+          <button id="prevQuestion" class="btn ghost" type="button">← anterior</button>
+          <button id="nextQuestion" class="btn primary" type="button" disabled>Próxima questão →</button>
+        </div>
+
+        <div class="finish-card hidden" id="finishCard">
+          <h3>Bloco concluído 💕</h3>
+          <p id="finishSummary"></p>
+          <div class="hero-actions">
+            <button id="restartTopic" class="btn secondary" type="button">Refazer este bloco</button>
+            <button id="nextTopic" class="btn primary" type="button">Ir para próximo bloco</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Questões feitas para revisão de AS • gestação, puericultura, RN e adolescência 💕</p>
+  </footer>
+
+  <script src="questoes-data.js"></script>
+  <script src="questoes.js"></script>
+</body>
+</html>

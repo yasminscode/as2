@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist AS • Gestação & Puericultura</title>
+  <meta name="description" content="Checklist fofo de estudos para AS com tema de gestação e puericultura." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orbs orb-1"></div>
+  <div class="bg-orbs orb-2"></div>
+  <div class="bg-orbs orb-3"></div>
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">✨ roteiro de estudos fofo</span>
+      <h1>Checklist de AS<br><span>Gestação & Puericultura</span></h1>
+      <p>
+        Um site delicado, organizado e leve pra estudar sem sofrer igual uma placenta mal perfundida.
+        Marca o que já revisou e acompanha teu progresso por bloco.
+      </p>
+      <div class="hero-actions">
+        <button id="expandAll" class="btn primary">Abrir tudo</button>
+        <button id="collapseAll" class="btn secondary">Fechar tudo</button>
+        <button id="resetProgress" class="btn ghost">Zerar progresso</button>
+        <a href="questoes.html" class="btn secondary nav-link-btn">Ir para as questões</a>
+      </div>
+      <div class="stats">
+        <div class="stat-card">
+          <span class="stat-label">progresso total</span>
+          <strong id="globalPercent">0%</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">itens concluídos</span>
+          <strong><span id="doneCount">0</span>/<span id="totalCount">0</span></strong>
+        </div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/hero-mother-baby.svg" alt="Ilustração delicada de maternidade" />
+      <div class="floating-card card-a">🌷 placenta • parto • puerpério</div>
+      <div class="floating-card card-b">🧸 RN • puericultura • adolescência</div>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h2>Mapa rápido</h2>
+        <nav id="toc"></nav>
+      </div>
+      <div class="sidebar-box soft">
+        <h2>Dica de estudo</h2>
+        <p>
+          Começa por <strong>gestação → placenta → parto/puerpério</strong>, depois vai para
+          <strong>RN e pediatria</strong>, e fecha com <strong>adolescência, genética e gravidade clínica</strong>.
+        </p>
+      </div>
+    </aside>
+
+    <section class="content">
+      <section class="intro-cards">
+        <article class="mini-card">
+          <span>🤰</span>
+          <h3>Gestação</h3>
+          <p>Adaptações maternas, placenta, imunologia e síndromes hipertensivas.</p>
+        </article>
+        <article class="mini-card">
+          <span>👶</span>
+          <h3>Pediatria</h3>
+          <p>RN, crescimento, puericultura, triagens e patologias frequentes.</p>
+        </article>
+        <article class="mini-card">
+          <span>🌼</span>
+          <h3>Adolescência</h3>
+          <p>Puberdade, sexualidade, saúde mental, vulnerabilidades e ética.</p>
+        </article>
+        <article class="mini-card mini-card-wide">
+          <span>📝</span>
+          <h3>Área de questões</h3>
+          <p>Agora o site também tem uma parte separada com 10 questões por tópico, incluindo ABCDE e asserção-razão.</p>
+          <a class="inline-link" href="questoes.html">Abrir banco de questões</a>
+        </article>
+      </section>
+
+      <section id="checklistContainer" class="checklist-grid"></section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Feito com carinho para revisão de AS • tema gestação & puericultura 💕</p>
+  </footer>
+
+  <script>
+    window.CHECKLIST_DATA = [{"title": "Gestação: adaptações maternas e lógica fisiológica", "icon": "🤰", "subtitle": "Base fisiológica da gestação e repercussões clínicas", "items": ["Entender por que o organismo materno precisa se adaptar para sustentar o feto", "Relacionar adaptação anatômica e fisiológica com repercussão funcional materna", "Saber diferenciar adaptação fisiológica esperada de sinal de alerta clínico", "Revisar alterações cardiovasculares: volume plasmático, débito cardíaco, frequência cardíaca, resistência vascular periférica e pressão arterial", "Revisar alterações respiratórias e a relação entre demanda fetal, ventilação e dispneia fisiológica", "Revisar alterações renais e hidroeletrolíticas: filtração glomerular, retenção hídrica, edema e proteinúria", "Revisar alterações hematológicas: hemodiluição, anemia fisiológica, coagulação e estado pró-trombótico", "Revisar alterações endócrinas e metabólicas: resistência insulínica, metabolismo de carboidratos e lipídios, hormônios placentários", "Revisar alterações musculoesqueléticas e tegumentares: postura, frouxidão ligamentar, hiperpigmentação e estrias"]}, {"title": "Placenta: desenvolvimento, estrutura e função", "icon": "🌸", "subtitle": "Morfologia, circulação, trocas, barreira, hormônios e imunologia", "items": ["Entender a formação da placenta desde implantação, trofoblasto e vilosidades coriônicas", "Revisar anatomia macroscópica: face fetal, face materna, cordão umbilical e membranas", "Revisar anatomia microscópica: vilosidades coriônicas, trofoblasto e barreira placentária", "Entender a circulação útero-placentária e feto-placentária", "Revisar função de trocas gasosas, transporte de nutrientes e excreção de metabólitos fetais", "Entender a função de barreira placentária e suas limitações", "Revisar função endócrina: hCG, progesterona, estrogênios e hPL", "Integrar placenta com manutenção da gestação e crescimento fetal"]}, {"title": "Imunologia da gestação", "icon": "🛡️", "subtitle": "Tolerância materno-fetal e interface trofoblasto-decídua", "items": ["Entender por que o feto não é rejeitado imunologicamente", "Revisar conceito de tolerância materno-fetal", "Estudar a interface trofoblasto-decídua", "Entender imunomodulação materna durante a gestação", "Relacionar falhas desses mecanismos com disfunções gestacionais", "Conectar imunologia da gestação com insuficiência placentária e pré-eclâmpsia"]}, {"title": "Patologias placentárias e repercussões materno-fetais", "icon": "⚠️", "subtitle": "Implantação, perfusão, inflamação e consequências clínicas", "items": ["Revisar alterações de implantação e perfusão placentária", "Entender insuficiência placentária e restrição de crescimento fetal", "Revisar noções de inflamação e infecção placentária", "Relacionar alterações placentárias com prematuridade, sofrimento fetal e repercussões maternas", "Estudar pré-eclâmpsia: conceito, fisiopatologia, disfunção endotelial, sinais e gravidade", "Estudar eclâmpsia e riscos maternos e fetais", "Integrar pré-eclâmpsia/eclâmpsia com placenta e adaptações maternas"]}, {"title": "Parto, puerpério e lactação", "icon": "🍼", "subtitle": "Fenômenos fisiológicos do parto e do pós-parto", "items": ["Revisar noções das fases do parto", "Entender mudanças fisiológicas maternas e fetais no trabalho de parto", "Relacionar contração uterina, dilatação e expulsão", "Revisar puerpério, involução uterina e ajustes hemodinâmicos e hormonais", "Identificar principais intercorrências e sinais de alerta no puerpério", "Estudar fisiologia da lactação: prolactina, ocitocina, sucção e ejeção do leite"]}, {"title": "Neonatologia essencial", "icon": "👶", "subtitle": "Transição ao nascimento, prematuridade e vigilância do RN", "items": ["Entender a transição cardio-respiratória ao nascimento", "Revisar mudança da circulação fetal para neonatal", "Estudar avaliação inicial do recém-nascido", "Definir prematuridade e reconhecer principais riscos do prematuro", "Estudar síndrome da angústia respiratória do recém-nascido e papel do surfactante", "Estudar icterícia neonatal e diferenciar fisiológica de sinais de alerta", "Relacionar vigilância clínica do RN com adaptação neonatal"]}, {"title": "Crescimento e desenvolvimento", "icon": "📈", "subtitle": "Marcos do desenvolvimento e interpretação clínica", "items": ["Diferenciar crescimento de desenvolvimento", "Revisar crescimento ponderoestatural e desenvolvimento neuropsicomotor", "Estudar marcos do RN, lactente, criança e adolescente", "Reconhecer variações de normalidade versus atraso", "Revisar noções de curvas de crescimento e interpretação longitudinal", "Relacionar desenvolvimento com nutrição, ambiente, prematuridade, doença crônica e genética", "Entender impactos de doenças genéticas e malformações no desenvolvimento"]}, {"title": "Puericultura e propedêutica pediátrica", "icon": "🩺", "subtitle": "Avaliação pediátrica, vigilância do desenvolvimento e promoção de saúde", "items": ["Organizar anamnese pediátrica por faixa etária", "Revisar exame físico do RN, lactente, escolar e adolescente", "Entender vigilância do desenvolvimento e sinais de alerta", "Revisar orientação familiar, aleitamento, alimentação, sono e prevenção de acidentes", "Estudar noções gerais de vacinação", "Treinar comunicação clínica com criança, adolescente e responsáveis", "Revisar confidencialidade, assentimento e particularidades do cuidado ao adolescente"]}, {"title": "Triagem pré-natal", "icon": "🧪", "subtitle": "Rastreio, prevenção e interpretação conceitual", "items": ["Entender objetivos da triagem pré-natal", "Revisar grupos de exames e rastreios usuais", "Saber o que cada exame busca detectar em termos conceituais", "Entender limitações dos testes de triagem", "Relacionar resultado alterado com necessidade de seguimento e encaminhamento"]}, {"title": "Triagem neonatal", "icon": "🧸", "subtitle": "Finalidade, exames e seguimento do rastreamento do RN", "items": ["Entender a finalidade do rastreamento neonatal", "Revisar principais rastreios do RN em nível conceitual", "Saber que rastreamento não substitui avaliação clínica", "Entender que exame alterado exige confirmação e seguimento", "Revisar comunicação de resultados e continuidade do cuidado"]}, {"title": "Doenças hereditárias, genética e malformações do SNC", "icon": "🧬", "subtitle": "Princípios introdutórios e impacto funcional", "items": ["Revisar noções básicas de herança genética", "Relacionar alteração genética com fenótipo e suspeição clínica", "Entender valor da história familiar e do aconselhamento introdutório", "Revisar principais malformações do SNC em visão geral", "Relacionar origem embriofuncional e impacto motor, cognitivo, sensorial e global", "Reconhecer necessidade de seguimento especializado"]}, {"title": "Puberdade e adolescência normal", "icon": "🌼", "subtitle": "Maturação sexual, crescimento puberal e aspectos biopsicossociais", "items": ["Diferenciar puberdade de adolescência", "Revisar sequência dos eventos puberais e variações do normal", "Entender crescimento puberal e desenvolvimento sexual secundário", "Revisar mudanças emocionais, identidade, relações familiares e sociais", "Treinar abordagem ética, acolhedora e não julgadora da sexualidade"]}, {"title": "Gravidez e anticoncepção na adolescência", "icon": "💗", "subtitle": "Prevenção, aconselhamento e cuidado centrado na pessoa", "items": ["Revisar prevenção e educação sexual", "Estudar noções gerais de aconselhamento contraceptivo", "Entender repercussões biológicas, psicológicas e sociais da gravidez na adolescência", "Revisar necessidade de acolhimento, rede de cuidado e aspectos ético-legais", "Estudar confidencialidade e direitos do adolescente"]}, {"title": "Adolescente em situação de risco e saúde mental", "icon": "🌧️", "subtitle": "Vulnerabilidades, sofrimento psíquico e trabalho em rede", "items": ["Revisar vulnerabilidades biopsicossociais: violência, uso de substâncias e vulnerabilidade social", "Relacionar escola, território e contexto familiar com risco", "Estudar desenvolvimento emocional e sinais de sofrimento psíquico", "Entender abordagem inicial, vínculo terapêutico e rede de cuidado", "Revisar estratégias de acolhimento e encaminhamento"]}, {"title": "Patologias pediátricas frequentes e sinais de gravidade", "icon": "🚨", "subtitle": "Quadros sindrômicos, gravidade e raciocínio inicial", "items": ["Revisar visão geral das patologias pediátricas mais comuns", "Reconhecer sinais de gravidade: alteração de consciência, esforço respiratório, instabilidade hemodinâmica, desidratação importante e convulsão", "Revisar febre com toxemia, recusa alimentar importante e perfusão periférica alterada", "Entender critérios gerais de encaminhamento e internação", "Relacionar sinais clínicos com risco de piora"]}, {"title": "Indicações gerais de internação e terapia intensiva pediátrica", "icon": "🏥", "subtitle": "Instabilidade clínica e necessidade de monitorização avançada", "items": ["Entender que o foco é princípio geral, não protocolo detalhado", "Reconhecer insuficiência respiratória, choque e alteração neurológica importante", "Identificar necessidade de monitorização contínua", "Reconhecer deterioração rápida do quadro clínico", "Saber justificar por que um quadro é potencialmente grave"]}];
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
